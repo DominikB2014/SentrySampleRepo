@@ -8,9 +8,9 @@ const test = () => {
 
 const makeApiCall = () => {
   return {
-    error: true
-  }
-}
+    error: true,
+  };
+};
 
 const triggerTransaction = () => {
   const transaction = Sentry.startTransaction({ name: "test-transaction" });
@@ -19,11 +19,11 @@ const triggerTransaction = () => {
   const result = makeApiCall();
   const span = transaction.startChild({
     data: {
-      result
+      result,
     },
-    op: 'task',
-    description: 'a test transaction'
-  })
+    op: "task",
+    description: "a test transaction",
+  });
   if (result.error) {
     span.setStatus("unknown_error");
   } else {
