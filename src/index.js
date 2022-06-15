@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserTracing } from "@sentry/tracing";
 import * as Sentry from "@sentry/react";
+import Release from './release.json'
 
 Sentry.init({
   dsn: "https://b2ab050f3ad54b5aadded1af46793339@o1288502.ingest.sentry.io/6507186",
@@ -14,6 +15,7 @@ Sentry.init({
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
+  release: `react@${Release.version}`
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
