@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 const test = () => {
-  throw new Error("test error");
+  throw new Error("This code is broken!");
 };
 
 function App() {
